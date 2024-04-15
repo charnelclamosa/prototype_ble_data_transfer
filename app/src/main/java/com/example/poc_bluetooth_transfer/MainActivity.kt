@@ -74,13 +74,15 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnBluetoothDiscoverable.setOnClickListener {
             if (!bluetoothAdapter.isDiscovering) {
-                Toast.makeText(this, "Making device discoverable...", Toast.LENGTH_SHORT).show()
+
                 var  intent = Intent(Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE))
                 if (ActivityCompat.checkSelfPermission(
                         this,
                         Manifest.permission.BLUETOOTH_ADVERTISE
                     ) != PackageManager.PERMISSION_GRANTED
                 ) {
+                    Toast.makeText(this, "Making device discoverable...", Toast.LENGTH_SHORT).show()
+                    startActivityForResult(intent, 1)
                     // TODO: Consider calling
                     //    ActivityCompat#requestPermissions
                     // here to request the missing permissions, and then overriding
@@ -90,7 +92,7 @@ class MainActivity : AppCompatActivity() {
                     // for ActivityCompat#requestPermissions for more details.
                     return@setOnClickListener
                 }
-                startActivityForResult(intent, 1)
+
             }
         }
     }
