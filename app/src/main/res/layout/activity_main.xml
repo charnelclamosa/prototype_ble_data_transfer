@@ -14,7 +14,7 @@
         android:id="@+id/textStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="Bluetooth is disabled"
         android:padding="5dp"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -25,16 +25,36 @@
         android:layout_height="100dp"
         android:src="@drawable/ic_bluetooth_off"/>
     <Button
-        android:id="@+id/btnBluetoothDiscoverable"
+        android:id="@+id/btnEnableBluetooth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Discoverable"
+        android:text="Enable Bluetooth"
         android:minWidth="200dp"/>
     <Button
-        android:id="@+id/btnBluetoothPairedDevices"
+        android:id="@+id/btnDiscoverDevices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Makde device discoverable"
+        android:minWidth="200dp"/>
+    <Button
+        android:id="@+id/btnScanDevices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scan devices"
+        android:minWidth="200dp"/>
+    <Button
+        android:id="@+id/btnGetPairedDevices"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Get paired devices"
         android:minWidth="200dp"/>
+
+    <TextView
+        android:id="@+id/textLog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
 
 </LinearLayout>
